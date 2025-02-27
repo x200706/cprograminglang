@@ -11,11 +11,16 @@ int main(void){
     bmi = (weight * 703) / (height * height);
 
     printf("Your BMI is %d\n\n", bmi); 
-    puts("BMI VALUES"); 
-    puts("Underweight:  less than 18.5"); 
-    puts("Normal:       between 18.5 and 24.9"); 
-    puts("Overweight:   between 25 and 29.9"); 
-    puts("Obese:        30 or greater"); 
+    
+    puts("BMI VALUES");
+    if (bmi < 18.5) {
+        puts("Underweight:  less than 18.5"); 
+    } else if (18.5 <= bmi && bmi <= 24.9) {
+        puts("Normal:       between 18.5 and 24.9"); 
+    } else if (25 <= bmi && bmi <= 29.9) {
+        puts("Overweight:   between 25 and 29.9");
+    } else if (bmi >= 30) {
+        puts("Obese:        30 or greater"); 
+    }
 }
-   
 
