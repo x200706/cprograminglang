@@ -7,7 +7,7 @@ int main(void){
     printf("Enter two integer: ");
     scanf("%d%d",&a, &b);
     int ans = gcd(a, b);
-    printf("Greatest common divisor of %d and %d is %d", a, b, ans);
+    printf("Greatest common divisor of %d and %d is %d\n", a, b, ans);
 }
 
 int gcd(int x, int y) {
