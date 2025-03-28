@@ -5,16 +5,18 @@
 int main(void)
 {
     int arr[5] = {0};
-    int mark[39] = {0};
+    int mark[40] = {0};
+
+    // 初始化隨機數種子
+    srand(time(NULL));
 
     for (unsigned int i = 0; i < 5; ++i) {
-        int num = 1 + (rand() % 39);
+        int num; // 定義在迴圈外，避免作用域問題
         int flag = 0;
-        while (flag == 1) {
+        while (flag == 0) {
             num = 1 + (rand() % 39);
-            if (mark[num] == 1) {
+            if (mark[num] == 0) {
                 flag = 1;
-                break;
             }
         }
         arr[i] = num;
@@ -25,3 +27,4 @@ int main(void)
         printf("%d ", arr[i]);
     }
 }
+
