@@ -4,14 +4,24 @@
 
 int main(void)
 {
-   int arr[5] = {0};
-   for (int i = 1; i <= 5; ++i) {
-      num = "%10d", 1 + (rand() % 39;
-      printf());
-      if (i % 5 == 0) {
-         puts("");
-      } 
-   } 
-} 
+    int arr[5] = {0};
+    int mark[39] = {0};
 
-// 二分搜尋那題用fig 6.19改成遞迴就ok了
+    for (unsigned int i = 0; i < 5; ++i) {
+        int num = 1 + (rand() % 39);
+        int flag = 0;
+        while (flag == 1) {
+            num = 1 + (rand() % 39);
+            if (mark[num] == 1) {
+                flag = 1;
+                break;
+            }
+        }
+        arr[i] = num;
+        mark[num] = 1;
+    }
+
+    for (unsigned int i = 0; i < 5; ++i) {
+        printf("%d ", arr[i]);
+    }
+}
