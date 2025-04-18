@@ -2,24 +2,24 @@
 #include <math.h>
 
 int main(void) {
-	double deno = 1; // ¤À¥À
+	double deno = 1; // åˆ†æ¯
 	double ans = 0;
 
-	// ¬ö¿ı¹F¦¨¥Ø¼Ğ¦^¦X¼Æ
+	// ç´€éŒ„é”æˆç›®æ¨™å›åˆæ•¸
 	int term314 = 0;
 	int term3141 = 0;
 	int term31415 = 0;
 	int term314159 = 0;
 
 	for (int term = 1; term <= 400000; term ++) {
-		// ­pºâ
-		if (term % 2 != 0) { // ©_¼Æ°é¬O¥[
+		// è¨ˆç®—
+		if (term % 2 != 0) { // å¥‡æ•¸åœˆæ˜¯åŠ 
 			ans += (double)4 / deno;
-		} else { // °¸¼Æ°é¬O´î
+		} else { // å¶æ•¸åœˆæ˜¯æ¸›
 			ans -= (double)4 / deno;
 		}
 		
-		// §PÂ_¬O§_¹Gªñ¥Ø¼Ğ
+		// åˆ¤æ–·æ˜¯å¦é€¼è¿‘ç›®æ¨™
         if (term314 == 0 && fabs(ans - 3.14) <= 0.000001) {
             term314 = term;
         }
