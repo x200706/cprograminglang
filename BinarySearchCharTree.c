@@ -36,18 +36,18 @@ int main(void) {
     }
     */
     // k e c f a l n g b
-    // §ï¦¨token
-    char word[45]; // ¦r¤¸°}¦C
-    scanf("%44[^\n]", word); // Á×§KªÅ¥Õ³QºIÂ_
+    // æ”¹æˆtoken
+    char word[45]; // å­—å…ƒé™£åˆ—
+    scanf("%44[^\n]", word); // é¿å…ç©ºç™½è¢«æˆªæ–·
 
-    char* tokens[50]; // ¦r¦ê«ü¼Ğ°}¦C
+    char* tokens[50]; // å­—ä¸²æŒ‡æ¨™é™£åˆ—
     char* element = strtok(word, " ");
     int token_count = 0;
     while (element != NULL) {
         tokens[token_count++] = element;
-        element = strtok(NULL, " "); // ¤U¤@­Ó
+        element = strtok(NULL, " "); // ä¸‹ä¸€å€‹
     }
-    // ¹M¾ú¦r¤¸
+    // éæ­·å­—å…ƒ
     for (int i = 0; i < token_count; i++) {
         insertNode(&rootPtr, tokens[i]);
     }
@@ -67,7 +67,7 @@ int main(void) {
 }
 
 void insertNode(TreeNodePtr* treePtr, char* value) {
-    if (*treePtr == NULL) { // ¦pªG¾ğ¬°ªÅ
+    if (*treePtr == NULL) { // å¦‚æœæ¨¹ç‚ºç©º
         *treePtr = malloc(sizeof(TreeNode));
         if (*treePtr != NULL) {
             (*treePtr)->data = value;
@@ -78,16 +78,16 @@ void insertNode(TreeNodePtr* treePtr, char* value) {
             printf("%s not inserted. No memory available.\n", value);
         }
     }
-    else { // ¾ğ¤£¬°ªÅ
-     // ¨Ï¥Î strcmp ¤ñ¸û¦r¦ê
+    else { // æ¨¹ä¸ç‚ºç©º
+     // ä½¿ç”¨ strcmp æ¯”è¼ƒå­—ä¸²
         int cmp = strcmp(value, (*treePtr)->data);
-        if (cmp < 0) { // value ¤p©ó·í«e¸`ÂI
+        if (cmp < 0) { // value å°æ–¼ç•¶å‰ç¯€é»
             insertNode(&((*treePtr)->leftPtr), value);
         }
-        else if (cmp > 0) { // value ¤j©ó·í«e¸`ÂI
+        else if (cmp > 0) { // value å¤§æ–¼ç•¶å‰ç¯€é»
             insertNode(&((*treePtr)->rightPtr), value);
         }
-        else { // ¬Ûµ¥¡A©¿²¤­«½Æ
+        else { // ç›¸ç­‰ï¼Œå¿½ç•¥é‡è¤‡
             printf("%s", "dup");
         }
     }
